@@ -5,8 +5,7 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-current_dir = os.path.dirname(os.path.dirname(__file__))
-parent_dir = os.path.dirname(current_dir)
+parent_dir = os.path.dirname(os.path.dirname(__file__))
 parmalink_path = os.path.join(parent_dir, 'config', 'parmalink.yml')
 cfg = config.load(parmalink_path)
 
