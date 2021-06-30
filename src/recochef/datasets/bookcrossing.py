@@ -3,6 +3,7 @@ import pandas as pd
 
 from recochef.datasets.dataset import Dataset
 
+
 class BookCrossing(Dataset):
   def __init__(self, version='v1'):
     super(BookCrossing, self).__init__()
@@ -10,8 +11,8 @@ class BookCrossing(Dataset):
 
   @pandas_cache
   def load_interactions(self):
-    tag = self.cfg.getProperty('bookcrossing.{}.interactions'.format(self.version))
-    interactions = pd.read_csv(self.permalinks[tag],
+    filepath = self.permalinks['bookcrossing'][self.version]['interactions']
+    interactions = pd.read_csv(filepath,
                                sep=';',
                                error_bad_lines=False,
                                warn_bad_lines=False,
@@ -22,8 +23,8 @@ class BookCrossing(Dataset):
 
   @pandas_cache
   def load_users(self):
-    tag = self.cfg.getProperty('bookcrossing.{}.users'.format(self.version))
-    users = pd.read_csv(self.permalinks[tag],
+    filepath = self.permalinks['bookcrossing'][self.version]['users']
+    users = pd.read_csv(filepath,
                         sep=';',
                         error_bad_lines=False,
                         warn_bad_lines=False,
@@ -34,8 +35,8 @@ class BookCrossing(Dataset):
 
   @pandas_cache
   def load_items(self):
-    tag = self.cfg.getProperty('bookcrossing.{}.items'.format(self.version))
-    items = pd.read_csv(self.permalinks[tag],
+    filepath = self.permalinks['bookcrossing'][self.version]['items']
+    items = pd.read_csv(items,
                         sep=';',
                         error_bad_lines=False,
                         warn_bad_lines=False,
