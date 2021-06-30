@@ -1,0 +1,15 @@
+
+# MovieLens Dataset
+movielens:
+  100k:
+    v1:
+      interactions : https://github.com/recohut/reco-data/raw/master/movielens/100k/v1/interactions.zip
+      users : https://github.com/recohut/reco-data/raw/master/movielens/100k/v1/users.zip
+      items : https://github.com/recohut/reco-data/raw/master/movielens/100k/v1/items.zip
+
+# BookCrossing Dataset
+bookcrossing:
+  v1:
+    interactions: https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/interactions.zip
+    users : https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/users.zip
+    items : https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/items.zip

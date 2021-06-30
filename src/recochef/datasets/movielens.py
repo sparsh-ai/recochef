@@ -11,21 +11,21 @@ class MovieLens(Dataset):
 
   @pandas_cache
   def load_interactions(self):
-    tag = 'movielens-{}-{}-interactions'.format(self.data, self.version)
+    tag = self.cfg.getProperty('movielens.{}.{}.interactions'.format(self.data, self.version))
     interactions = pd.read_csv(self.permalinks[tag], low_memory=False)
     interactions.columns = ['USERID','ITEMID','RATING','TIMESTAMP']
     return interactions
 
   @pandas_cache
   def load_users(self):
-    tag = 'movielens-{}-{}-users'.format(self.data, self.version)
+    tag = self.cfg.getProperty('movielens.{}.{}.users'.format(self.data, self.version))
     users = pd.read_csv(self.permalinks[tag], low_memory=False)
     users.columns = ['USERID','AGE','GENDER','OCCUPATION','ZIPCODE']
     return users
 
   @pandas_cache
   def load_items(self):
-    tag = 'movielens-{}-{}-items'.format(self.data, self.version)
+    tag = self.cfg.getProperty('movielens.{}.{}.items'.format(self.data, self.version))
     items = pd.read_csv(self.permalinks[tag], low_memory=False)
     items.columns = ['ITEMID','TITLE','RELEASE','VIDRELEASE','URL',
                             'UNKNOWN', 'ACTION', 'ADVENTURE', 'ANIMATION',
