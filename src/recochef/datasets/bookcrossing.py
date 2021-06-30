@@ -36,7 +36,7 @@ class BookCrossing(Dataset):
   @pandas_cache
   def load_items(self):
     filepath = self.permalinks['bookcrossing'][self.version]['items']
-    items = pd.read_csv(items,
+    items = pd.read_csv(filepath,
                         sep=';',
                         error_bad_lines=False,
                         warn_bad_lines=False,
