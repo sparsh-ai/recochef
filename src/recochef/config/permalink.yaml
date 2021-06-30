@@ -13,3 +13,11 @@ bookcrossing:
     interactions: https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/interactions.zip
     users : https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/users.zip
     items : https://github.com/recohut/reco-data/raw/master/bookcrossing/v1/items.zip
+
+# IJCAI 2016 Tmall Dataset
+tmall:
+  v1:
+    interactions: https://disk.yandex.ru/d/YouI7jkZe4Bh-w
+    train: https://github.com/recohut/reco-data/raw/master/tmall/v1/train.zip
+    test: 
+    merchants: https://github.com/recohut/reco-data/raw/master/tmall/v1/merchant.zip
