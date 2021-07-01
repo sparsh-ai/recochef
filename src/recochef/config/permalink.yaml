@@ -21,3 +21,9 @@ tmall:
     train: https://github.com/recohut/reco-data/raw/master/tmall/v1/train.zip
     test: https://github.com/recohut/reco-data/raw/master/tmall/v1/test.zip
     merchants: https://github.com/recohut/reco-data/raw/master/tmall/v1/merchant.zip
+
+# YooChoose RecSys'15 Dataset
+yoochoose:
+  v1:
+    clicks: https://disk.yandex.ru/d/o9qvLeoDQGRa9Q
+    buys: https://github.com/recohut/reco-data/raw/master/yoochoose/v1/buys.zip
