@@ -12,39 +12,35 @@ class Tmall(Dataset):
     self.version = version
 
   @pandas_cache
-  def load_interactions(self, filepath='tmall_interactions.csv'):
+  def load_interactions(self, filepath='tmall_interactions.zip', nrows=None):
     fileurl = self.permalinks['tmall'][self.version]['interactions']
-    if not os.path.exists(fpath):
+    if not os.path.exists(fileurl):
       download_yandex(fileurl, filepath)
-    interactions = pd.read_csv(filepath,
-                               sep=';',
-                               error_bad_lines=False,
-                               warn_bad_lines=False,
-                               low_memory=False)
-    # interactions.columns = ['USERID','ITEMID','RATING']
+    if nrows:
+      interactions = pd.read_csv(filepath, nrows=nrows)
+    else:
+      interactions = pd.read_csv(filepath)
+    interactions.columns = ['USERID', 'MERCHANTID', 'ITEMID', 'CATEGORYID',
+                            'EVENTTYPE', 'TIMESTAMP']
     return interactions
 
   @pandas_cache
-  def load_users(self):
-    filepath = self.permalinks['bookcrossing'][self.version]['users']
-    users = pd.read_csv(filepath,
-                        sep=';',
-                        error_bad_lines=False,
-                        warn_bad_lines=False,
-                        encoding='latin-1',
-                        low_memory=False)
-    users.columns = ['USERID', 'LOCATION', 'AGE']
-    return users
+  def load_train(self):
+    filepath = self.permalinks['tmall'][self.version]['train']
+    train = pd.read_csv(filepath)
+    train.columns = ['USERID', 'MERCHANTID', 'LOCATION', 'TIMESTAMP']
+    return train
 
   @pandas_cache
-  def load_items(self):
-    filepath = self.permalinks['bookcrossing'][self.version]['items']
-    items = pd.read_csv(filepath,
-                        sep=';',
-                        error_bad_lines=False,
-                        warn_bad_lines=False,
-                        encoding='latin-1',
-                        low_memory=False)
-    items.columns = ['ITEMID', 'TITLE', 'AUTHOR', 'YEAR', 'PUBLISHER',
-                     'URLSMALL', 'URLMEDIUM', 'URLLARGE']
-    return items
+  def load_test(self):
+    filepath = self.permalinks['tmall'][self.version]['test']
+    test = pd.read_csv(filepath)
+    test.columns = ['USERID', 'LOCATION', 'MERCHANTIDS']
+    return test
+
+  @pandas_cache
+  def load_merchants(self):
+    filepath = self.permalinks['tmall'][self.version]['merchants']
+    merchants = pd.read_csv(filepath)
+    merchants.columns = ['MERCHANTID', 'BUDGET', 'LOCATIONS']
+    return merchants

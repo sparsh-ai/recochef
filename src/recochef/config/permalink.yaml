@@ -19,5 +19,5 @@ tmall:
   v1:
     interactions: https://disk.yandex.ru/d/YouI7jkZe4Bh-w
     train: https://github.com/recohut/reco-data/raw/master/tmall/v1/train.zip
-    test: 
+    test: https://github.com/recohut/reco-data/raw/master/tmall/v1/test.zip
     merchants: https://github.com/recohut/reco-data/raw/master/tmall/v1/merchant.zip
