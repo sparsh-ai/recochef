@@ -211,7 +211,7 @@ def random_split(data, ratio=0.8, seed=42):
         return train_test_split(data, test_size=None, train_size=ratio, random_state=seed)
 
 
-def python_chrono_split(
+def chrono_split(
     data,
     ratio=0.75,
     min_rating=1,
@@ -252,7 +252,7 @@ def python_chrono_split(
         is_random=False,
     )
 
-def python_stratified_split(
+def stratified_split(
     data,
     ratio=0.75,
     min_rating=1,
