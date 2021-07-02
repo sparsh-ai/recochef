@@ -27,3 +27,12 @@ yoochoose:
   v1:
     clicks: https://disk.yandex.ru/d/o9qvLeoDQGRa9Q
     buys: https://github.com/recohut/reco-data/raw/master/yoochoose/v1/buys.zip
+
+# Trivago RecSys'19 Challenge dataset
+trivago:
+  v1:
+    train: https://disk.yandex.ru/d/fFEvSaj6Cdplug
+    test: https://disk.yandex.ru/d/_kAw9ajZuIC3rg
+    items: https://github.com/recohut/reco-data/raw/master/trivago/v1/item_metadata.parquet.gz
+    confirmation: https://github.com/recohut/reco-data/raw/master/trivago/v1/confirmation.parquet.gz
+    validation: https://github.com/recohut/reco-data/raw/master/trivago/v1/validation.parquet.gz
