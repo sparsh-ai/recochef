@@ -254,7 +254,8 @@ class SequentialMarkov():
       return np.array(elements, dtype=np.int32)
 
 
-  def generate_sequential(num_users=100,
+  def generate_sequential(self,
+                          num_users=100,
                           num_items=1000,
                           num_interactions=10000,
                           concentration_parameter=0.1,
@@ -291,7 +292,7 @@ class SequentialMarkov():
       if random_state is None:
           random_state = np.random.RandomState()
 
-      transition_matrix = _build_transition_matrix(
+      transition_matrix = self._build_transition_matrix(
           num_items - 1,
           concentration_parameter,
           random_state)
@@ -300,7 +301,7 @@ class SequentialMarkov():
                                               num_users,
                                               num_interactions,
                                               dtype=np.int32))
-      item_ids = _generate_sequences(num_interactions,
+      item_ids = self._generate_sequences(num_interactions,
                                     transition_matrix,
                                     order,
                                     random_state) + 1
