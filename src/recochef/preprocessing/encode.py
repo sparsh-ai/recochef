@@ -1,4 +1,5 @@
 def label_encode(data, cols):
+  data = data.copy()
   maps = {}
   for col in cols:
     _unique = data[col].unique()
