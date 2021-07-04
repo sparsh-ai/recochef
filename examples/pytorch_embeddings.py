@@ -28,6 +28,24 @@ df_valid = le(df_valid, col='ITEMID', maps=iid_maps)
 # embedding will be initialized at random
 embed = nn.Embedding(10, 2)
 
+# given a list of ids we can "look up" the embedding corresponing to each id
+ids = [1,2,0,4,5,1]
+a = torch.LongTensor([ids])
+print(f"Randomly initialized Embeddings of a list of ids {ids}:\n\n{embed(a)}\n{'='*100}\n")
+
+# initializing and multiplying users, items embeddings for the sample dataset
+emb_size = 2
+user_emb = nn.Embedding(df_train.USERID.nunique(), emb_size)
+item_emb = nn.Embedding(df_train.ITEMID.nunique(), emb_size)
+users = torch.LongTensor(df_train.USERID.values)
+items = torch.LongTensor(df_train.ITEMID.values)
+U = user_emb(users)
+V = item_emb(items)
+print(f"User embeddings of length {emb_size}:\n\n{U}\n{'='*100}\n")
+print(f"Item embeddings of length {emb_size}:\n\n{V}\n{'='*100}\n")
+print(f"Element-wise multiplication of user and item embeddings:\n\n{U*V}\n{'='*100}\n")
+print(f"Dot product per row:\n\n{(U*V).sum(1)}\n{'='*100}\n")
+
 
 """
 Train set:
@@ -111,21 +129,3 @@ tensor([-0.5830,  2.4900,  0.5445, -2.7467,  0.5445, -2.7467, -1.5711, -1.5711,
         -1.5711, -1.5711], grad_fn=<SumBackward1>)
 ====================================================================================================
 """
-
-# given a list of ids we can "look up" the embedding corresponing to each id
-ids = [1,2,0,4,5,1]
-a = torch.LongTensor([ids])
-print(f"Randomly initialized Embeddings of a list of ids {ids}:\n\n{embed(a)}\n{'='*100}\n")
-
-# initializing and multiplying users, items embeddings for the sample dataset
-emb_size = 2
-user_emb = nn.Embedding(df_train.USERID.nunique(), emb_size)
-item_emb = nn.Embedding(df_train.ITEMID.nunique(), emb_size)
-users = torch.LongTensor(df_train.USERID.values)
-items = torch.LongTensor(df_train.ITEMID.values)
-U = user_emb(users)
-V = item_emb(items)
-print(f"User embeddings of length {emb_size}:\n\n{U}\n{'='*100}\n")
-print(f"Item embeddings of length {emb_size}:\n\n{V}\n{'='*100}\n")
-print(f"Element-wise multiplication of user and item embeddings:\n\n{U*V}\n{'='*100}\n")
-print(f"Dot product per row:\n\n{(U*V).sum(1)}\n{'='*100}\n")
