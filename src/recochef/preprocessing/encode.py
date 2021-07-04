@@ -11,4 +11,5 @@ def label_encode(data, col, maps=None):
     return data, maps
   else:
     data[col] = data[col].map(maps[col+'_TO_IDX'])
+    data = data[data[col].notna()]
     return data
