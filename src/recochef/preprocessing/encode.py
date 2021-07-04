@@ -1,11 +1,14 @@
-def label_encode(data, cols):
+def label_encode(data, col, maps=None):
   data = data.copy()
-  maps = {}
-  for col in cols:
+  if maps==None:
+    maps = {}
     _unique = data[col].unique()
     _map = {old: new for new, old in enumerate(_unique)}
     _reverse_map = {new: old for new, old in enumerate(_unique)}
     data[col] = data[col].map(_map)
     maps[col+'_TO_IDX'] = _map
     maps['IDX_TO_'+col] = _reverse_map
-  return data, maps
+    return data, maps
+  else:
+    data[col] = data[col].map(maps[col+'_TO_IDX'])
+    return data
