@@ -14,7 +14,7 @@ class YooChoose(Dataset):
   @pandas_cache
   def load_clicks(self, filepath='yoochoose_clicks.zip', nrows=None):
     fileurl = self.permalinks['yoochoose'][self.version]['clicks']
-    if not os.path.exists(fileurl):
+    if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
     if nrows:
       clicks = pd.read_csv(filepath,

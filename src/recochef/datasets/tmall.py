@@ -14,7 +14,7 @@ class Tmall(Dataset):
   @pandas_cache
   def load_interactions(self, filepath='tmall_interactions.zip', nrows=None):
     fileurl = self.permalinks['tmall'][self.version]['interactions']
-    if not os.path.exists(fileurl):
+    if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
     if nrows:
       interactions = pd.read_csv(filepath, nrows=nrows)

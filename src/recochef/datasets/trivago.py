@@ -14,7 +14,7 @@ class Trivago(Dataset):
   @pandas_cache
   def load_train(self, filepath='trivago_train.parquet.gz', nrows=None):
     fileurl = self.permalinks['trivago'][self.version]['train']
-    if not os.path.exists(fileurl):
+    if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
     if nrows:
       train = pd.read_parquet(filepath, nrows=nrows)
@@ -27,7 +27,7 @@ class Trivago(Dataset):
   @pandas_cache
   def load_test(self, filepath='trivago_test.parquet.gz', nrows=None):
     fileurl = self.permalinks['trivago'][self.version]['test']
-    if not os.path.exists(fileurl):
+    if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
     if nrows:
       test = pd.read_parquet(filepath, nrows=nrows)

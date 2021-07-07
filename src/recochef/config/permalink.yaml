@@ -36,3 +36,12 @@ trivago:
     items: https://github.com/recohut/reco-data/raw/master/trivago/v1/item_metadata.parquet.gz
     confirmation: https://github.com/recohut/reco-data/raw/master/trivago/v1/confirmation.parquet.gz
     validation: https://github.com/recohut/reco-data/raw/master/trivago/v1/validation.parquet.gz
+
+# E-commerce Cosmetics Store dataset of user behaviors, 5 months, also available on kaggle
+cosmetics:
+  v1:
+    chunk1: https://disk.yandex.ru/d/3YWOSn-fNubc2g
+    chunk2: https://disk.yandex.ru/d/-sr3HBJEEeZNbg
+    chunk3: https://disk.yandex.ru/d/gVtlTL2Xs_k4Aw
+    chunk4: https://disk.yandex.ru/d/F2xsceqoXyG4hg
+    chunk5: https://disk.yandex.ru/d/Cu8IPFiPiVnDOQ
