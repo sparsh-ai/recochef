@@ -45,3 +45,8 @@ cosmetics:
     chunk3: https://disk.yandex.ru/d/gVtlTL2Xs_k4Aw
     chunk4: https://disk.yandex.ru/d/F2xsceqoXyG4hg
     chunk5: https://disk.yandex.ru/d/Cu8IPFiPiVnDOQ
+
+# User-article edit history interactions, check out https://github.com/drsaunders/wikirecs
+wikirecs:
+  v1:
+    interactions: https://disk.yandex.ru/d/j6SR4E7A2mbMOw

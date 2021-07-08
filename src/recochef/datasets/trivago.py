@@ -16,10 +16,7 @@ class Trivago(Dataset):
     fileurl = self.permalinks['trivago'][self.version]['train']
     if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
-    if nrows:
-      train = pd.read_parquet(filepath, nrows=nrows)
-    else:
-      train = pd.read_parquet(filepath)
+    train = pd.read_parquet(filepath)
     train.columns = ['USERID','SESSIONID','TIMESTAMP','STEP','EVENTTYPE','REFERENCE',
                      'PLATFORM','CITY','DEVICE','FILTERS','IMPRESSIONS','PRICES']
     return train
@@ -29,10 +26,7 @@ class Trivago(Dataset):
     fileurl = self.permalinks['trivago'][self.version]['test']
     if not os.path.exists(filepath):
       download_yandex(fileurl, filepath)
-    if nrows:
-      test = pd.read_parquet(filepath, nrows=nrows)
-    else:
-      test = pd.read_parquet(filepath)
+    test = pd.read_parquet(filepath)
     test.columns = ['USERID','SESSIONID','TIMESTAMP','STEP','EVENTTYPE','REFERENCE',
                      'PLATFORM','CITY','DEVICE','FILTERS','IMPRESSIONS','PRICES']
     return test
