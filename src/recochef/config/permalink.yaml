@@ -50,3 +50,11 @@ cosmetics:
 wikirecs:
   v1:
     interactions: https://disk.yandex.ru/d/j6SR4E7A2mbMOw
+
+# SIGIR'21 E-commerce Challenge, sponsored by coveo, check out https://github.com/drsaunders/wikirecs
+coveo:
+  v1:
+    browsing: https://disk.yandex.ru/d/UNZxwA_y2McPuQ
+    searching: https://disk.yandex.ru/d/87aYRS-dx1rNqQ
+    metadata: https://disk.yandex.ru/d/Jv3wzxEORTuIXg
+    labels: https://disk.yandex.ru/d/S4JTnm_AwjVg8w
