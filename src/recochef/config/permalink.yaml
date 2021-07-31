@@ -58,3 +58,10 @@ coveo:
     searching: https://disk.yandex.ru/d/87aYRS-dx1rNqQ
     metadata: https://disk.yandex.ru/d/Jv3wzxEORTuIXg
     labels: https://disk.yandex.ru/d/S4JTnm_AwjVg8w
+
+# Santander Bank Product Recommendations - Kaggle competition
+santander
+    v1:
+        train: https://disk.yandex.ru/d/e0OhgI-xB13UPQ
+        test: https://disk.yandex.ru/d/yC5WeXLIyNOV2g
+        submission: https://disk.yandex.ru/d/HRVCqhypKtZcZQ
